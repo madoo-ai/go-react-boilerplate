@@ -1,0 +1,27 @@
+apiVersion: manus-dei/v2
+name: go-react-boilerplate
+
+# The app is a standalone Go + React repository. The session image comes
+# from the go-react profile, not the repository's production Dockerfile.
+environment:
+  profile: go-react
+  version: "upstream-3f0da731f1"
+
+workspace: template
+preview:
+  port: 5173
+
+install:
+  - cd web && npm ci --no-audit --no-fund
+
+opencode:
+  mode: connect
+  model: opencode/deepseek-v4.1-flash
+
+resources:
+  cpus: "4"
+  memory: 6g
+  pids: 1024
+
+secrets:
+  - OPENCODE_API_KEY

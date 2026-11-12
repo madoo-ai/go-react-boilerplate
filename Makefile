@@ -91,7 +91,11 @@ fmt-check:
 	@out=$$(gofmt -l cmd internal); if [ -n "$$out" ]; then echo "unformatted:"; echo "$$out"; exit 1; fi
 
 db-up:
-	docker compose up -d --wait db mailpit
+	@if pg_isready -h 127.0.0.1 -p 54330 -U postgres >/dev/null 2>&1; then \
+	  echo "Using the profile PostgreSQL on 127.0.0.1:54330"; \
+	else \
+	  docker compose up -d --wait db mailpit; \
+	fi
 
 db-down:
 	docker compose down
