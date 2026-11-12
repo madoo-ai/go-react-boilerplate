@@ -1,0 +1,94 @@
+# golangci-lint config for go-react-boilerplate.
+#
+# The depguard rules are the AGENTS.md layer law made machine checked:
+# entity/usecase/port purity, handler as the driving adapter, and gorm
+# encapsulated inside the postgres adapter.
+
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  default: standard
+  enable:
+    - copyloopvar
+    - depguard
+    - godot
+    - gosec
+    - misspell
+    - unconvert
+    - unparam
+  settings:
+    gosec:
+      excludes:
+        - G304 # the auth secret file is read by a variable path on purpose
+    depguard:
+      rules:
+        entity-purity:
+          files:
+            - "**/internal/entity/**"
+          deny:
+            - pkg: go-react-boilerplate/internal/adapter
+              desc: entity is pure domain — no adapter imports
+            - pkg: gorm.io
+              desc: entity is pure domain — no gorm
+            - pkg: net/http
+              desc: entity is pure domain — no net/http
+            - pkg: database/sql
+              desc: entity is pure domain — no database access
+        port-purity:
+          files:
+            - "**/internal/app/port/**"
+          deny:
+            - pkg: go-react-boilerplate/internal/adapter
+              desc: ports report facts — no adapter types in signatures
+            - pkg: gorm.io
+              desc: ports report facts — storage types stay in adapters
+            - pkg: net/http
+              desc: ports report facts — no HTTP types in signatures
+        usecase-purity:
+          files:
+            - "**/internal/app/usecase/**"
+          deny:
+            - pkg: go-react-boilerplate/internal/adapter
+              desc: usecases orchestrate ports — never adapters
+            - pkg: gorm.io
+              desc: usecases orchestrate ports — never storage
+            - pkg: net/http
+              desc: usecases orchestrate ports — HTTP lives in handler
+        handler-purity:
+          files:
+            - "**/internal/handler/**"
+          deny:
+            - pkg: go-react-boilerplate/internal/adapter
+              desc: handlers go through usecases — no adapter access
+            - pkg: gorm.io
+              desc: handlers go through usecases — no storage
+        gorm-encapsulation:
+          files:
+            - $all
+            - "!**/internal/adapter/postgres/**"
+            - "!**/internal/xmodule/**"
+            - "!**/cmd/**"
+          deny:
+            - pkg: gorm.io
+              desc: gorm stays inside the postgres adapter (xmodule composes it)
+  exclusions:
+    presets:
+      - std-error-handling
+      - common-false-positives
+    rules:
+      - path: _test\.go
+        text: "G101"
+        linters:
+          - gosec
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  settings:
+    goimports:
+      local-prefixes:
+        - go-react-boilerplate

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="A Go + React boilerplate with auth, RBAC, i18n and a themeable app shell." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Go React Boilerplate</title>
+    <script>
+      window.__APP_NAME__ = "__APP_NAME__";
+      window.__APP_LOCALE__ = "__APP_LOCALE__";
+    </script>
+    <script>
+      // Apply the stored mode and palette before first paint.
+      (function () {
+        try {
+          function cookie(name) {
+            var match = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]+)"));
+            return match ? decodeURIComponent(match[1]) : null;
+          }
+          var theme = cookie("theme") || "system";
+          var dark = theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+          var palette = cookie("color-theme");
+          if (palette && palette !== "default") {
+            document.documentElement.dataset.colorTheme = palette;
+          }
+        } catch (error) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

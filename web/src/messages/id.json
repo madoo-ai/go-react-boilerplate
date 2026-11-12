@@ -1,0 +1,542 @@
+{
+  "common": {
+    "appName": "Go React Boilerplate",
+    "save": "Simpan",
+    "saving": "Menyimpan...",
+    "cancel": "Batal",
+    "create": "Buat",
+    "edit": "Ubah",
+    "delete": "Hapus",
+    "search": "Cari",
+    "actions": "Aksi",
+    "loading": "Memuat...",
+    "noResults": "Tidak ada hasil.",
+    "back": "Kembali",
+    "next": "Berikutnya",
+    "previous": "Sebelumnya",
+    "page": "Halaman {page} dari {pages}",
+    "showing": "Menampilkan {from}-{to} dari {total}",
+    "all": "Semua",
+    "status": "Status",
+    "active": "Aktif",
+    "pending": "Menunggu",
+    "suspended": "Ditangguhkan",
+    "role": "Peran",
+    "user": "Pengguna",
+    "email": "Email",
+    "name": "Nama",
+    "phone": "Telepon",
+    "jobTitle": "Jabatan",
+    "department": "Departemen",
+    "password": "Kata sandi",
+    "currentPassword": "Kata sandi saat ini",
+    "newPassword": "Kata sandi baru",
+    "confirmPassword": "Konfirmasi kata sandi",
+    "optional": "Opsional",
+    "required": "Wajib",
+    "language": "Bahasa",
+    "theme": "Tema",
+    "light": "Terang",
+    "dark": "Gelap",
+    "system": "Sistem",
+    "enabled": "Aktif",
+    "disabled": "Nonaktif",
+    "protected": "Dilindungi",
+    "signOut": "Keluar",
+    "settings": "Pengaturan",
+    "profile": "Profil",
+    "appearance": "Tampilan",
+    "security": "Keamanan",
+    "admin": "Admin",
+    "dashboard": "Dasbor",
+    "users": "Pengguna",
+    "roles": "Peran",
+    "unknown": "Tidak diketahui",
+    "never": "Tidak pernah",
+    "copy": "Salin",
+    "copied": "Tersalin",
+    "close": "Tutup",
+    "openMenu": "Buka menu",
+    "toggleSidebar": "Buka/tutup sidebar",
+    "backToDashboard": "Kembali ke dasbor",
+    "backToHome": "Kembali ke beranda",
+    "showPassword": "Tampilkan kata sandi",
+    "hidePassword": "Sembunyikan kata sandi",
+    "remove": "Hapus",
+    "add": "Tambah"
+  },
+  "nav": {
+    "dashboard": "Dasbor",
+    "administration": "Administrasi",
+    "users": "Pengguna",
+    "roles": "Peran",
+    "settings": "Pengaturan",
+    "profile": "Profil",
+    "password": "Kata sandi",
+    "appearance": "Tampilan",
+    "security": "Keamanan"
+  },
+  "auth": {
+    "brand": {
+      "tagline": "Fondasi kecil dan opiniotif untuk aplikasi yang terus kita bangun ulang.",
+      "stack": "Go 1.24 · PostgreSQL · React 19 · shadcn/ui"
+    },
+    "login": {
+      "title": "Masuk",
+      "description": "Masukkan email dan kata sandi untuk melanjutkan.",
+      "submit": "Masuk",
+      "noAccount": "Belum punya akun?",
+      "register": "Buat akun",
+      "forgot": "Lupa kata sandi?",
+      "remember": "Ingat saya"
+    },
+    "register": {
+      "title": "Buat akun",
+      "description": "Isi data Anda. Administrator mungkin perlu menyetujui akun Anda.",
+      "submit": "Buat akun",
+      "hasAccount": "Sudah punya akun?",
+      "login": "Masuk"
+    },
+    "forgot": {
+      "title": "Lupa kata sandi?",
+      "description": "Masukkan email Anda dan kami akan mengirim tautan reset.",
+      "submit": "Kirim tautan reset",
+      "back": "Kembali ke halaman masuk"
+    },
+    "reset": {
+      "title": "Pilih kata sandi baru",
+      "description": "Masukkan dan konfirmasi kata sandi baru Anda.",
+      "submit": "Reset kata sandi",
+      "invalid": "Tautan reset tidak valid atau sudah kedaluwarsa.",
+      "back": "Kembali ke halaman masuk",
+      "requestNew": "Minta tautan baru"
+    },
+    "verify": {
+      "title": "Verifikasi email",
+      "description": "Kami mengirim tautan verifikasi ke kotak masuk Anda.",
+      "success": "Email Anda sudah terverifikasi. Silakan masuk.",
+      "error": "Tautan verifikasi tidak valid atau sudah kedaluwarsa.",
+      "resend": "Kirim ulang email verifikasi",
+      "resent": "Email verifikasi dikirim.",
+      "back": "Kembali ke halaman masuk"
+    },
+    "twoFactor": {
+      "title": "Autentikasi dua faktor",
+      "description": "Masukkan kode 6 digit dari aplikasi autentikator Anda.",
+      "submit": "Verifikasi",
+      "backup": "Gunakan kode cadangan",
+      "backupTitle": "Gunakan kode cadangan",
+      "backupDescription": "Masukkan salah satu kode cadangan yang Anda simpan saat mengaktifkan 2FA.",
+      "backupSubmit": "Verifikasi kode cadangan",
+      "totpTab": "Aplikasi autentikator",
+      "backupTab": "Kode cadangan",
+      "backToLogin": "Kembali ke halaman masuk"
+    },
+    "confirmPassword": {
+      "title": "Konfirmasi kata sandi",
+      "description": "Demi keamanan, konfirmasi kata sandi Anda untuk melanjutkan.",
+      "submit": "Konfirmasi"
+    },
+    "fields": {
+      "name": "Nama",
+      "email": "Email",
+      "password": "Kata sandi",
+      "confirmPassword": "Konfirmasi kata sandi",
+      "code": "Kode",
+      "backupCode": "Kode cadangan"
+    },
+    "messages": {
+      "pendingApproval": "Akun Anda menunggu persetujuan. Administrator harus memverifikasinya sebelum Anda bisa masuk.",
+      "suspended": "Akun Anda ditangguhkan. Hubungi administrator.",
+      "invalidCredentials": "Email atau kata sandi salah.",
+      "emailNotVerified": "Verifikasi email Anda sebelum masuk.",
+      "emailSent": "Periksa kotak masuk Anda untuk langkah berikutnya.",
+      "passwordReset": "Kata sandi Anda sudah direset. Masuk dengan kata sandi baru.",
+      "signedOut": "Anda sudah keluar.",
+      "accountCreated": "Akun dibuat. Periksa kotak masuk untuk memverifikasi email.",
+      "approvalRequired": "Akun dibuat. Administrator harus menyetujuinya sebelum Anda bisa masuk.",
+      "accountDeleted": "Akun Anda sudah dihapus."
+    }
+  },
+  "validation": {
+    "required": "Kolom ini wajib diisi.",
+    "email": "Masukkan alamat email yang valid.",
+    "min": "Minimal {min} karakter.",
+    "max": "Maksimal {max} karakter.",
+    "passwordMismatch": "Kata sandi tidak cocok.",
+    "passwordLength": "Kata sandi harus antara 8 dan 128 karakter.",
+    "invalidRole": "Pilih peran yang valid.",
+    "invalidStatus": "Pilih status yang valid.",
+    "invalidPermission": "Pilih izin yang valid.",
+    "nameLength": "Nama harus antara 2 dan 120 karakter.",
+    "roleName": "Gunakan huruf kecil, angka, dan garis bawah saja.",
+    "url": "Masukkan URL yang valid."
+  },
+  "errors": {
+    "unexpected": "Terjadi kesalahan. Coba lagi.",
+    "unauthorized": "Masuk untuk melanjutkan.",
+    "forbidden": "Anda tidak punya izin untuk melakukan itu.",
+    "accountInactive": "Akun Anda tidak aktif.",
+    "notFound": "Tidak ditemukan.",
+    "cannotDeleteSelf": "Anda tidak bisa menghapus akun sendiri di sini.",
+    "lastSuperadmin": "Anda tidak bisa menghapus superadmin terakhir.",
+    "protectedUser": "Akun ini dilindungi.",
+    "immutableRole": "Peran superadmin dilindungi.",
+    "defaultRole": "Peran pengguna default tidak bisa diganti namanya atau dihapus.",
+    "roleInUse": "Peran ini masih dipakai pengguna dan tidak bisa dihapus.",
+    "emailInUse": "Email itu sudah dipakai.",
+    "invalidCredentials": "Email atau kata sandi salah.",
+    "tooManyRequests": "Terlalu banyak percobaan. Coba lagi nanti.",
+    "invalidToken": "Tautan ini tidak valid atau sudah kedaluwarsa.",
+    "passwordRequired": "Masukkan kata sandi Anda.",
+    "incorrectPassword": "Kata sandi Anda salah.",
+    "confirmPasswordRequired": "Konfirmasi kata sandi untuk melanjutkan.",
+    "smtpNotConfigured": "Email belum dikonfigurasi.",
+    "wrongPassword": "Kata sandi salah.",
+    "invalidCode": "Kode itu tidak valid.",
+    "twoFactorNotEnabled": "Autentikasi dua faktor belum aktif.",
+    "userNotFound": "Pengguna tidak ditemukan.",
+    "roleNotFound": "Peran tidak ditemukan.",
+    "invalidRequest": "Permintaan tidak valid."
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "description": "Ringkasan tim dan akses Anda.",
+    "stats": {
+      "totalUsers": "Total pengguna",
+      "activeUsers": "Pengguna aktif",
+      "pendingUsers": "Menunggu persetujuan",
+      "roles": "Peran"
+    },
+    "charts": {
+      "roleDistribution": "Pengguna per peran",
+      "roleDistributionHint": "Akun dikelompokkan berdasarkan peran.",
+      "signups": "Pertumbuhan pengguna (30 hari)",
+      "signupsHint": "Akun yang dibuat dalam 30 hari terakhir.",
+      "users": "Pengguna",
+      "noData": "Belum ada data."
+    },
+    "recentUsers": "Pengguna terbaru",
+    "recentUsersEmpty": "Belum ada pengguna.",
+    "viewAll": "Lihat semua pengguna"
+  },
+  "users": {
+    "title": "Pengguna",
+    "description": "Kelola akun, peran, dan persetujuan pendaftaran.",
+    "create": "Buat pengguna",
+    "edit": "Ubah pengguna",
+    "searchPlaceholder": "Cari nama atau email...",
+    "filterRole": "Filter peran",
+    "filterStatus": "Filter status",
+    "empty": "Tidak ada pengguna yang cocok dengan filter.",
+    "columns": {
+      "name": "Nama",
+      "email": "Email",
+      "role": "Peran",
+      "status": "Status",
+      "createdAt": "Dibuat",
+      "actions": "Aksi"
+    },
+    "form": {
+      "title": "Detail pengguna",
+      "description": "Atur detail akun dan aksesnya.",
+      "name": "Nama",
+      "email": "Email",
+      "phone": "Telepon",
+      "jobTitle": "Jabatan",
+      "department": "Departemen",
+      "role": "Peran",
+      "status": "Status",
+      "password": "Kata sandi",
+      "passwordHint": "Biarkan kosong untuk mempertahankan kata sandi saat ini.",
+      "passwordHintCreate": "Minimal 8 karakter."
+    },
+    "actions": {
+      "verify": "Verifikasi",
+      "delete": "Hapus",
+      "edit": "Ubah",
+      "create": "Buat pengguna",
+      "save": "Simpan perubahan"
+    },
+    "delete": {
+      "title": "Hapus pengguna",
+      "description": "Ini akan menghapus {name} dan semua sesinya secara permanen. Tindakan ini tidak bisa dibatalkan.",
+      "confirm": "Hapus pengguna"
+    },
+    "approval": {
+      "title": "Persetujuan pendaftaran",
+      "description": "Wajibkan persetujuan sebelum pendaftar baru bisa masuk.",
+      "enabled": "Persetujuan wajib",
+      "disabled": "Akses otomatis",
+      "toggle": "Wajibkan persetujuan"
+    },
+    "messages": {
+      "created": "Pengguna dibuat.",
+      "updated": "Pengguna diperbarui.",
+      "deleted": "Pengguna dihapus.",
+      "verified": "Pengguna diverifikasi.",
+      "approvalUpdated": "Persetujuan pendaftaran diperbarui."
+    }
+  },
+  "roles": {
+    "title": "Peran",
+    "description": "Tentukan apa yang bisa dilakukan setiap peran.",
+    "create": "Buat peran",
+    "edit": "Ubah peran",
+    "empty": "Belum ada peran.",
+    "columns": {
+      "name": "Nama",
+      "description": "Deskripsi",
+      "permissions": "Izin",
+      "users": "Pengguna",
+      "actions": "Aksi"
+    },
+    "form": {
+      "name": "Nama",
+      "label": "Label",
+      "description": "Deskripsi",
+      "permissions": "Izin",
+      "nameHint": "Huruf kecil, angka, dan garis bawah.",
+      "protected": "Peran sistem. Tidak bisa diubah atau dihapus."
+    },
+    "actions": {
+      "create": "Buat peran",
+      "save": "Simpan perubahan",
+      "delete": "Hapus"
+    },
+    "delete": {
+      "title": "Hapus peran",
+      "description": "Hapus {name}? Tindakan ini tidak bisa dibatalkan.",
+      "confirm": "Hapus peran"
+    },
+    "messages": {
+      "created": "Peran dibuat.",
+      "updated": "Peran diperbarui.",
+      "deleted": "Peran dihapus."
+    }
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "description": "Kelola profil dan preferensi Anda.",
+    "profile": {
+      "title": "Profil",
+      "description": "Perbarui informasi pribadi Anda.",
+      "name": "Nama",
+      "email": "Email",
+      "phone": "Telepon",
+      "jobTitle": "Jabatan",
+      "department": "Departemen",
+      "save": "Simpan profil",
+      "saved": "Profil diperbarui.",
+      "emailHint": "Mengubah email mungkin memerlukan verifikasi."
+    },
+    "password": {
+      "title": "Kata sandi",
+      "description": "Gunakan kata sandi yang kuat dan tidak dipakai ulang.",
+      "current": "Kata sandi saat ini",
+      "new": "Kata sandi baru",
+      "confirm": "Konfirmasi kata sandi baru",
+      "save": "Perbarui kata sandi",
+      "saved": "Kata sandi diperbarui."
+    },
+    "appearance": {
+      "title": "Tampilan",
+      "description": "Pilih tampilan aplikasi.",
+      "theme": "Tema",
+      "language": "Bahasa",
+      "light": "Terang",
+      "dark": "Gelap",
+      "system": "Sistem",
+      "colorTheme": "Tema warna",
+      "colorThemeDescription": "Pilih palet untuk mode terang dan gelap. Default-nya adalah palet bergaya Stripe.",
+      "saved": "Tampilan diperbarui."
+    },
+    "security": {
+      "title": "Keamanan",
+      "description": "Lindungi akun Anda dengan autentikasi dua faktor.",
+      "twoFactor": "Autentikasi dua faktor",
+      "enabled": "Aktif",
+      "disabled": "Nonaktif",
+      "enable": "Aktifkan 2FA",
+      "disable": "Nonaktifkan 2FA",
+      "scan": "Pindai kode QR ini dengan aplikasi autentikator Anda.",
+      "secret": "Atau masukkan rahasia ini secara manual.",
+      "verify": "Verifikasi kode",
+      "code": "Kode 6 digit",
+      "backupCodes": "Simpan kode cadangan ini di tempat aman. Setiap kode hanya bisa dipakai sekali.",
+      "enabledMessage": "Autentikasi dua faktor aktif.",
+      "disabledMessage": "Autentikasi dua faktor nonaktif.",
+      "password": "Konfirmasi kata sandi Anda.",
+      "invalidPassword": "Kata sandi Anda salah.",
+      "alreadyEnabled": "Autentikasi dua faktor sudah aktif."
+    },
+    "danger": {
+      "title": "Zona bahaya",
+      "description": "Hapus akun Anda dan semua data terkait.",
+      "delete": "Hapus akun",
+      "confirmTitle": "Hapus akun Anda?",
+      "confirmDescription": "Ini akan menghapus akun, sesi, dan data Anda secara permanen. Tindakan ini tidak bisa dibatalkan.",
+      "confirm": "Hapus akun saya",
+      "confirmPassword": "Konfirmasi kata sandi",
+      "deleted": "Akun Anda sudah dihapus."
+    }
+  },
+  "errorPages": {
+    "notFound": {
+      "title": "Halaman tidak ditemukan",
+      "description": "Halaman yang Anda cari tidak ada."
+    },
+    "forbidden": {
+      "title": "Akses ditolak",
+      "description": "Anda tidak punya izin untuk melihat halaman ini."
+    },
+    "server": {
+      "title": "Terjadi kesalahan",
+      "description": "Terjadi kesalahan tak terduga. Coba lagi.",
+      "retry": "Coba lagi"
+    }
+  },
+  "landing": {
+    "meta": {
+      "title": "Starter Go + React dengan sudut pandang.",
+      "description": "Starter Go API dan React SPA siap produksi dengan auth cookie, RBAC, i18n dan 38 tema warna."
+    },
+    "nav": {
+      "features": "Isi boilerplate",
+      "themes": "Tema",
+      "stack": "Stack",
+      "signIn": "Masuk",
+      "dashboard": "Buka dasbor"
+    },
+    "hero": {
+      "title": "Mulai dari bagian yang tak ingin Anda bangun ulang.",
+      "description": "Auth, role, manajemen pengguna, pengaturan, lokalisasi dan shell React bertema di atas API Go. Basis siap produksi untuk hal yang benar-benar milik Anda.",
+      "primaryCta": "Buka demo",
+      "primaryCtaAuthed": "Buka dasbor",
+      "secondaryCta": "Lihat isinya",
+      "note": "Go, PostgreSQL, React 19 dan 38 tema. Akun demo memakai kata sandi \"password\".",
+      "previewLabel": "Pratinjau dasbor",
+      "themesBadge": "38 tema"
+    },
+    "themes": {
+      "live": "Palet langsung",
+      "current": "Saat ini",
+      "title": "38 palet. Satu sistem.",
+      "description": "Mode dan palet berdiri sendiri. Pilih terang, gelap, atau sistem, lalu beri permukaan Stripe, Dracula, Nord, atau Catppuccin. Pilihan tersimpan di cookie dan langsung terbaca di request berikutnya.",
+      "all": "Buka pengaturan tampilan",
+      "featured": "Palet pilihan"
+    },
+    "features": {
+      "title": "Pekerjaan yang Anda ulang terus, sudah selesai.",
+      "description": "Boilerplate ini menangani bagian yang mahal untuk dibuat benar dan mudah dibuat salah. Domainnya milik Anda.",
+      "items": {
+        "auth": {
+          "title": "Autentikasi yang patuh",
+          "body": "Email dan kata sandi, verifikasi, reset, 2FA TOTP, gerbang konfirmasi kata sandi, dan mode persetujuan yang benar-benar memblokir akun menunggu."
+        },
+        "rbac": {
+          "title": "Izin dengan tulang punggung",
+          "body": "Satu role per pengguna, matriks izin, superadmin terlindungi dan pemeriksaan eskalasi di use case Go, bukan hanya di sidebar."
+        },
+        "shell": {
+          "title": "Shell yang siap dipakai",
+          "body": "Sidebar, breadcrumb, pengaturan, profil, kata sandi, tampilan, keamanan dan penghapusan akun. Satu judul per halaman dan formulir yang konsisten."
+        },
+        "data": {
+          "title": "Bertipe dari ujung ke ujung",
+          "body": "Go, PostgreSQL, Zod, React Query dan seed yang membuat data cukup untuk layar yang nyata."
+        },
+        "design": {
+          "title": "Fondasi desain",
+          "body": "Palet default bergaya Stripe dan 37 palet OpenCode, token semantik, serta ikon Altics. Ganti identitas tanpa membangun ulang UI."
+        },
+        "ops": {
+          "title": "Operasional yang membosankan",
+          "body": "Satu binary Go, satu Postgres, satu Dockerfile, stack Compose, seed dan Makefile. Cerita deployment tetap jelas."
+        }
+      }
+    },
+    "stack": {
+      "title": "Membosankan di tempat yang tepat.",
+      "description": "Satu API Go, satu database, satu aplikasi React, satu lapisan UI. Pilihannya disengaja, dan gerbang kualitas berjalan di CI.",
+      "note": "Plus Zod, React Hook Form, React Query, Sonner dan Recharts.",
+      "items": {
+        "next": {
+          "name": "Go",
+          "role": "API, auth dan static serving"
+        },
+        "react": {
+          "name": "React 19",
+          "role": "Vite SPA"
+        },
+        "typescript": {
+          "name": "TypeScript",
+          "role": "Mode strict"
+        },
+        "prisma": {
+          "name": "PostgreSQL",
+          "role": "Satu-satunya database"
+        },
+        "postgres": {
+          "name": "Migrasi SQL",
+          "role": "golang-migrate"
+        },
+        "tailwind": {
+          "name": "Tailwind CSS 4",
+          "role": "Token semantik"
+        },
+        "auth": {
+          "name": "Auth Go",
+          "role": "Sesi, 2FA, verifikasi"
+        },
+        "docker": {
+          "name": "Docker",
+          "role": "Runtime satu binary"
+        },
+        "vitest": {
+          "name": "Go test + Vitest",
+          "role": "Tes unit"
+        },
+        "playwright": {
+          "name": "Playwright",
+          "role": "Tes end-to-end"
+        }
+      }
+    },
+    "demo": {
+      "title": "Coba aplikasi aslinya.",
+      "description": "Demo telah diisi tiga role dan cukup pengguna agar dasbor, tabel dan grafik terasa nyata. Tanpa setup, tanpa panggilan sales.",
+      "accounts": "Akun demo",
+      "password": "Kata sandi",
+      "signIn": "Masuk ke demo",
+      "create": "Buat akun",
+      "command": "Atau jalankan secara lokal",
+      "copy": "Gunakan kata sandi \"password\"."
+    },
+    "footer": {
+      "tagline": "Starter Go + React dengan sudut pandang.",
+      "product": "Produk",
+      "access": "Akses",
+      "features": "Isi boilerplate",
+      "themes": "Tema",
+      "stack": "Stack",
+      "signIn": "Masuk",
+      "create": "Buat akun",
+      "license": "Lisensi MIT.",
+      "built": "Dibangun dengan Go, React, PostgreSQL dan ikon Altics."
+    }
+  },
+  "permissions": {
+    "view_admin": "Akses admin",
+    "manage_users": "Kelola pengguna",
+    "manage_roles": "Kelola peran"
+  },
+  "preferences": {
+    "theme": "Tema",
+    "language": "Bahasa",
+    "light": "Terang",
+    "dark": "Gelap",
+    "system": "Sistem",
+    "updated": "Preferensi diperbarui."
+  }
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="Starter Go API dan React SPA siap produksi dengan auth cookie, RBAC, i18n dan 38 tema warna." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Akses ditolak · __APP_NAME_TOKEN__</title>
+    <script>
+      window.__APP_NAME__ = "__APP_NAME__";
+      window.__APP_LOCALE__ = "__APP_LOCALE__";
+    </script>
+    <script>
+      // Apply the stored mode and palette before first paint.
+      (function () {
+        try {
+          function cookie(name) {
+            var match = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]+)"));
+            return match ? decodeURIComponent(match[1]) : null;
+          }
+          var theme = cookie("theme") || "system";
+          var dark = theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+          var palette = cookie("color-theme");
+          if (palette && palette !== "default") {
+            document.documentElement.dataset.colorTheme = palette;
+          }
+        } catch (error) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DqCexSn1.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-XKyaHtl9.js">
+    <link rel="modulepreload" crossorigin href="/assets/charts-DSOyzc0u.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BoSlwGnC.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-_Xf8R9_B.js">
+    <link rel="modulepreload" crossorigin href="/assets/query-5H6nl9WG.js">
+    <link rel="modulepreload" crossorigin href="/assets/radix-Lg8ZmN6m.js">
+    <link rel="modulepreload" crossorigin href="/assets/meta-B1Bfqpsg.js">
+    <link rel="modulepreload" crossorigin href="/assets/spinner-C23F8tQZ.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CFBfsNPM.css">
+  </head>
+  <body>
+    <div id="root"><!--$--><div class="grid min-h-svh place-items-center bg-background p-6"><div class="flex max-w-md flex-col items-center gap-5 text-center"><span class="grid size-14 place-items-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/15"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M20.0001 10.5647C20.0001 9.93402 19.9913 9.80944 19.963 9.70825C19.9302 9.59125 19.8761 9.48075 19.8038 9.38306C19.7413 9.29871 19.6478 9.21512 19.1505 8.82837L12.3683 3.55298C12.1816 3.40776 12.0821 3.33168 12.007 3.2815C12.0045 3.27987 12.0024 3.27808 12.0001 3.27661C11.9979 3.27808 11.9957 3.27987 11.9933 3.2815C11.9182 3.33168 11.8187 3.40776 11.632 3.55298L4.84974 8.82837C4.35249 9.21512 4.25891 9.29871 4.19642 9.38306C4.12416 9.48076 4.07003 9.59125 4.03724 9.70825C4.00891 9.80944 4.00013 9.93402 4.00013 10.5647V17.8001C4.00013 18.3766 4.00139 18.7491 4.02454 19.0325C4.04674 19.3039 4.08432 19.4049 4.1095 19.4543C4.20537 19.6423 4.35808 19.7951 4.54603 19.8909C4.59546 19.9161 4.6963 19.9536 4.9679 19.9758C5.25124 19.999 5.62377 20.0002 6.20032 20.0002H17.7999C18.3765 20.0002 18.749 19.999 19.0324 19.9758C19.304 19.9536 19.4048 19.9161 19.4542 19.8909C19.6422 19.7951 19.7949 19.6423 19.8908 19.4543C19.9159 19.4049 19.9535 19.3039 19.9757 19.0325C19.9989 18.7491 20.0001 18.3766 20.0001 17.8001V10.5647ZM22.0001 17.8001C22.0001 18.3434 22.0012 18.811 21.9699 19.1946C21.9376 19.5898 21.8657 19.9833 21.673 20.3616C21.3854 20.926 20.9268 21.3855 20.3624 21.6731C19.9842 21.8658 19.5907 21.9367 19.1954 21.969C18.8118 22.0003 18.3435 22.0002 17.7999 22.0002H6.20032C5.65677 22.0002 5.18849 22.0003 4.80481 21.969C4.40958 21.9367 4.0161 21.8658 3.63782 21.6731C3.07344 21.3855 2.61486 20.926 2.32728 20.3616C2.13457 19.9833 2.06269 19.5898 2.0304 19.1946C1.99909 18.811 2.00013 18.3434 2.00013 17.8001V10.5647C2.00012 10.0471 1.99176 9.59683 2.11146 9.16919C2.20979 8.81805 2.37122 8.48779 2.58802 8.19458C2.85205 7.8376 3.21274 7.56795 3.62122 7.25025L10.4034 1.97486C10.6818 1.75838 11.0424 1.45405 11.4777 1.33618C11.7771 1.25515 12.0907 1.24511 12.3937 1.30591L12.5226 1.33618L12.6827 1.38892C13.0469 1.52904 13.3533 1.78549 13.5968 1.97486L20.379 7.25025C20.7875 7.56794 21.1482 7.8376 21.4122 8.19458C21.629 8.48779 21.7905 8.81805 21.8888 9.16919C22.0085 9.59683 22.0001 10.0471 22.0001 10.5647V17.8001Z" fill="currentColor"></path></svg></span><div class="flex flex-col gap-2"><h1 class="font-display text-4xl tracking-tight">Akses ditolak</h1><p class="text-sm text-muted-foreground">Anda tidak punya izin untuk melihat halaman ini.</p></div><div class="flex flex-wrap justify-center gap-2"><a data-slot="button" data-variant="default" data-size="default" class="group/button inline-flex shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 bg-primary text-primary-foreground hover:bg-primary/80 h-9 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5" href="/dashboard" data-discover="true">Kembali ke dasbor</a><a data-slot="button" data-variant="outline" data-size="default" class="group/button inline-flex shrink-0 items-center justify-center rounded-full border bg-clip-padding text-sm font-medium whitespace-nowrap transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50 h-9 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5" href="/" data-discover="true">Kembali ke beranda</a></div></div></div><!--/$--></div>
+  </body>
+</html>

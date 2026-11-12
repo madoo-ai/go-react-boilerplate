@@ -1,0 +1,542 @@
+{
+  "common": {
+    "appName": "Go React Boilerplate",
+    "save": "Save",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "actions": "Actions",
+    "loading": "Loading...",
+    "noResults": "No results.",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "page": "Page {page} of {pages}",
+    "showing": "Showing {from}-{to} of {total}",
+    "all": "All",
+    "status": "Status",
+    "active": "Active",
+    "pending": "Pending",
+    "suspended": "Suspended",
+    "role": "Role",
+    "user": "User",
+    "email": "Email",
+    "name": "Name",
+    "phone": "Phone",
+    "jobTitle": "Job title",
+    "department": "Department",
+    "password": "Password",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "optional": "Optional",
+    "required": "Required",
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "protected": "Protected",
+    "signOut": "Sign out",
+    "settings": "Settings",
+    "profile": "Profile",
+    "appearance": "Appearance",
+    "security": "Security",
+    "admin": "Admin",
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "roles": "Roles",
+    "unknown": "Unknown",
+    "never": "Never",
+    "copy": "Copy",
+    "copied": "Copied",
+    "close": "Close",
+    "openMenu": "Open menu",
+    "toggleSidebar": "Toggle sidebar",
+    "backToDashboard": "Back to dashboard",
+    "backToHome": "Back to home",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "remove": "Remove",
+    "add": "Add"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "administration": "Administration",
+    "users": "Users",
+    "roles": "Roles",
+    "settings": "Settings",
+    "profile": "Profile",
+    "password": "Password",
+    "appearance": "Appearance",
+    "security": "Security"
+  },
+  "auth": {
+    "brand": {
+      "tagline": "A small, opinionated foundation for the apps we keep rebuilding.",
+      "stack": "Go 1.24 · PostgreSQL · React 19 · shadcn/ui"
+    },
+    "login": {
+      "title": "Sign in",
+      "description": "Enter your email and password to continue.",
+      "submit": "Sign in",
+      "noAccount": "No account yet?",
+      "register": "Create an account",
+      "forgot": "Forgot your password?",
+      "remember": "Remember me"
+    },
+    "register": {
+      "title": "Create an account",
+      "description": "Fill in your details. An administrator may need to approve your account.",
+      "submit": "Create account",
+      "hasAccount": "Already have an account?",
+      "login": "Sign in"
+    },
+    "forgot": {
+      "title": "Forgot your password?",
+      "description": "Enter your email and we will send a reset link.",
+      "submit": "Send reset link",
+      "back": "Back to sign in"
+    },
+    "reset": {
+      "title": "Choose a new password",
+      "description": "Enter and confirm your new password.",
+      "submit": "Reset password",
+      "invalid": "This reset link is invalid or has expired.",
+      "back": "Back to sign in",
+      "requestNew": "Request a new link"
+    },
+    "verify": {
+      "title": "Verify your email",
+      "description": "We sent a verification link to your inbox.",
+      "success": "Your email is verified. You can sign in now.",
+      "error": "This verification link is invalid or has expired.",
+      "resend": "Resend verification email",
+      "resent": "Verification email sent.",
+      "back": "Back to sign in"
+    },
+    "twoFactor": {
+      "title": "Two-factor authentication",
+      "description": "Enter the 6-digit code from your authenticator app.",
+      "submit": "Verify",
+      "backup": "Use a backup code",
+      "backupTitle": "Use a backup code",
+      "backupDescription": "Enter one of the backup codes you saved when you enabled 2FA.",
+      "backupSubmit": "Verify backup code",
+      "totpTab": "Authenticator app",
+      "backupTab": "Backup code",
+      "backToLogin": "Back to sign in"
+    },
+    "confirmPassword": {
+      "title": "Confirm your password",
+      "description": "For your security, confirm your password to continue.",
+      "submit": "Confirm"
+    },
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "code": "Code",
+      "backupCode": "Backup code"
+    },
+    "messages": {
+      "pendingApproval": "Your account is waiting for approval. An administrator must verify it before you can sign in.",
+      "suspended": "Your account is suspended. Contact an administrator.",
+      "invalidCredentials": "Invalid email or password.",
+      "emailNotVerified": "Verify your email before signing in.",
+      "emailSent": "Check your inbox for the next step.",
+      "passwordReset": "Your password has been reset. Sign in with the new password.",
+      "signedOut": "You have been signed out.",
+      "accountCreated": "Account created. Check your inbox to verify your email.",
+      "approvalRequired": "Account created. An administrator must approve it before you can sign in.",
+      "accountDeleted": "Your account has been deleted."
+    }
+  },
+  "validation": {
+    "required": "This field is required.",
+    "email": "Enter a valid email address.",
+    "min": "Must be at least {min} characters.",
+    "max": "Must be at most {max} characters.",
+    "passwordMismatch": "Passwords do not match.",
+    "passwordLength": "Password must be between 8 and 128 characters.",
+    "invalidRole": "Choose a valid role.",
+    "invalidStatus": "Choose a valid status.",
+    "invalidPermission": "Choose a valid permission.",
+    "nameLength": "Name must be between 2 and 120 characters.",
+    "roleName": "Use lowercase letters, numbers and underscores only.",
+    "url": "Enter a valid URL."
+  },
+  "errors": {
+    "unexpected": "Something went wrong. Try again.",
+    "unauthorized": "Sign in to continue.",
+    "forbidden": "You do not have permission to do that.",
+    "accountInactive": "Your account is not active.",
+    "notFound": "Not found.",
+    "cannotDeleteSelf": "You cannot delete your own account here.",
+    "lastSuperadmin": "You cannot remove the last superadmin.",
+    "protectedUser": "This account is protected.",
+    "immutableRole": "The superadmin role is protected.",
+    "defaultRole": "The default user role cannot be renamed or deleted.",
+    "roleInUse": "This role is assigned to users and cannot be deleted.",
+    "emailInUse": "That email is already in use.",
+    "invalidCredentials": "Invalid email or password.",
+    "tooManyRequests": "Too many attempts. Try again later.",
+    "invalidToken": "This link is invalid or has expired.",
+    "passwordRequired": "Enter your password.",
+    "incorrectPassword": "Your password is incorrect.",
+    "confirmPasswordRequired": "Confirm your password to continue.",
+    "smtpNotConfigured": "Email is not configured.",
+    "wrongPassword": "Wrong password.",
+    "invalidCode": "That code is invalid.",
+    "twoFactorNotEnabled": "Two-factor authentication is not enabled.",
+    "userNotFound": "User not found.",
+    "roleNotFound": "Role not found.",
+    "invalidRequest": "Invalid request."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "A quick view of your team and access.",
+    "stats": {
+      "totalUsers": "Total users",
+      "activeUsers": "Active users",
+      "pendingUsers": "Pending approval",
+      "roles": "Roles"
+    },
+    "charts": {
+      "roleDistribution": "Users by role",
+      "roleDistributionHint": "Accounts grouped by role.",
+      "signups": "User growth (30 days)",
+      "signupsHint": "Accounts created in the last 30 days.",
+      "users": "Users",
+      "noData": "No data yet."
+    },
+    "recentUsers": "Recent users",
+    "recentUsersEmpty": "No users yet.",
+    "viewAll": "View all users"
+  },
+  "users": {
+    "title": "Users",
+    "description": "Manage accounts, roles and registration approvals.",
+    "create": "Create user",
+    "edit": "Edit user",
+    "searchPlaceholder": "Search name or email...",
+    "filterRole": "Filter by role",
+    "filterStatus": "Filter by status",
+    "empty": "No users match your filters.",
+    "columns": {
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "status": "Status",
+      "createdAt": "Created",
+      "actions": "Actions"
+    },
+    "form": {
+      "title": "User details",
+      "description": "Set the account details and access.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "jobTitle": "Job title",
+      "department": "Department",
+      "role": "Role",
+      "status": "Status",
+      "password": "Password",
+      "passwordHint": "Leave blank to keep the current password.",
+      "passwordHintCreate": "At least 8 characters."
+    },
+    "actions": {
+      "verify": "Verify",
+      "delete": "Delete",
+      "edit": "Edit",
+      "create": "Create user",
+      "save": "Save changes"
+    },
+    "delete": {
+      "title": "Delete user",
+      "description": "This permanently deletes {name} and all their sessions. This cannot be undone.",
+      "confirm": "Delete user"
+    },
+    "approval": {
+      "title": "Registration approval",
+      "description": "Require approval before new registrations can sign in.",
+      "enabled": "Approval required",
+      "disabled": "Automatic access",
+      "toggle": "Require approval"
+    },
+    "messages": {
+      "created": "User created.",
+      "updated": "User updated.",
+      "deleted": "User deleted.",
+      "verified": "User verified.",
+      "approvalUpdated": "Registration approval updated."
+    }
+  },
+  "roles": {
+    "title": "Roles",
+    "description": "Define what each role can do.",
+    "create": "Create role",
+    "edit": "Edit role",
+    "empty": "No roles yet.",
+    "columns": {
+      "name": "Name",
+      "description": "Description",
+      "permissions": "Permissions",
+      "users": "Users",
+      "actions": "Actions"
+    },
+    "form": {
+      "name": "Name",
+      "label": "Label",
+      "description": "Description",
+      "permissions": "Permissions",
+      "nameHint": "Lowercase letters, numbers and underscores.",
+      "protected": "System role. It cannot be changed or deleted."
+    },
+    "actions": {
+      "create": "Create role",
+      "save": "Save changes",
+      "delete": "Delete"
+    },
+    "delete": {
+      "title": "Delete role",
+      "description": "Delete {name}? This cannot be undone.",
+      "confirm": "Delete role"
+    },
+    "messages": {
+      "created": "Role created.",
+      "updated": "Role updated.",
+      "deleted": "Role deleted."
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Manage your profile and preferences.",
+    "profile": {
+      "title": "Profile",
+      "description": "Update your personal information.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "jobTitle": "Job title",
+      "department": "Department",
+      "save": "Save profile",
+      "saved": "Profile updated.",
+      "emailHint": "Changing your email may require verification."
+    },
+    "password": {
+      "title": "Password",
+      "description": "Use a strong password you do not reuse.",
+      "current": "Current password",
+      "new": "New password",
+      "confirm": "Confirm new password",
+      "save": "Update password",
+      "saved": "Password updated."
+    },
+    "appearance": {
+      "title": "Appearance",
+      "description": "Choose how the app looks.",
+      "theme": "Theme",
+      "language": "Language",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System",
+      "colorTheme": "Color theme",
+      "colorThemeDescription": "Choose a palette for light and dark mode. The default is the Stripe-inspired palette.",
+      "saved": "Appearance updated."
+    },
+    "security": {
+      "title": "Security",
+      "description": "Protect your account with two-factor authentication.",
+      "twoFactor": "Two-factor authentication",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "enable": "Enable 2FA",
+      "disable": "Disable 2FA",
+      "scan": "Scan this QR code with your authenticator app.",
+      "secret": "Or enter this secret manually.",
+      "verify": "Verify code",
+      "code": "6-digit code",
+      "backupCodes": "Save these backup codes somewhere safe. Each code works once.",
+      "enabledMessage": "Two-factor authentication enabled.",
+      "disabledMessage": "Two-factor authentication disabled.",
+      "password": "Confirm your password.",
+      "invalidPassword": "Your password is incorrect.",
+      "alreadyEnabled": "Two-factor authentication is already enabled."
+    },
+    "danger": {
+      "title": "Danger zone",
+      "description": "Delete your account and all associated data.",
+      "delete": "Delete account",
+      "confirmTitle": "Delete your account?",
+      "confirmDescription": "This permanently deletes your account, sessions and data. This cannot be undone.",
+      "confirm": "Delete my account",
+      "confirmPassword": "Confirm your password",
+      "deleted": "Your account has been deleted."
+    }
+  },
+  "errorPages": {
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist."
+    },
+    "forbidden": {
+      "title": "Access denied",
+      "description": "You do not have permission to view this page."
+    },
+    "server": {
+      "title": "Something went wrong",
+      "description": "An unexpected error occurred. Try again.",
+      "retry": "Try again"
+    }
+  },
+  "landing": {
+    "meta": {
+      "title": "A Go + React starter with a point of view.",
+      "description": "A production-minded Go API and React SPA with cookie auth, RBAC, i18n and 38 color themes."
+    },
+    "nav": {
+      "features": "What's inside",
+      "themes": "Themes",
+      "stack": "Stack",
+      "signIn": "Sign in",
+      "dashboard": "Open dashboard"
+    },
+    "hero": {
+      "title": "Start with the parts nobody wants to rebuild.",
+      "description": "Auth, roles, user management, settings, localization and a themeable React shell on a Go API. A production-minded base for the thing that is actually yours.",
+      "primaryCta": "Open the demo",
+      "primaryCtaAuthed": "Open the dashboard",
+      "secondaryCta": "See what's inside",
+      "note": "Go, PostgreSQL, React 19 and 38 themes. Demo accounts use the password \"password\".",
+      "previewLabel": "A preview of the dashboard",
+      "themesBadge": "38 themes"
+    },
+    "themes": {
+      "live": "Live palette",
+      "current": "Current",
+      "title": "38 palettes. One system.",
+      "description": "The mode and the palette are independent. Pick light, dark or system, then give it a Stripe, Dracula, Nord or Catppuccin surface. The choice is a cookie away from the next request.",
+      "all": "Open appearance settings",
+      "featured": "Featured palettes"
+    },
+    "features": {
+      "title": "The work you keep repeating, already done.",
+      "description": "The boilerplate covers the parts that are expensive to get right and easy to get wrong. The domain is yours.",
+      "items": {
+        "auth": {
+          "title": "Auth that behaves",
+          "body": "Email and password, verification, reset, TOTP 2FA, a confirm-password gate and an approval mode that actually blocks pending accounts."
+        },
+        "rbac": {
+          "title": "Permissions with a spine",
+          "body": "One role per user, a permission matrix, protected superadmins and escalation checks in the Go use cases, not only in the sidebar."
+        },
+        "shell": {
+          "title": "A shell that ships",
+          "body": "Sidebar, breadcrumbs, settings, profile, password, appearance, security and account deletion. One title per page and consistent forms."
+        },
+        "data": {
+          "title": "Typed end to end",
+          "body": "Go, PostgreSQL, Zod, React Query and a seed that creates enough data to make the screens real."
+        },
+        "design": {
+          "title": "A design baseline",
+          "body": "The Stripe-inspired default and 37 OpenCode palettes, semantic tokens and Altics icons. Swap the identity without rebuilding the UI."
+        },
+        "ops": {
+          "title": "Boring operations",
+          "body": "One Go binary, one Postgres, one Dockerfile, a Compose stack, a seed and a Makefile. The deployment story stays obvious."
+        }
+      }
+    },
+    "stack": {
+      "title": "Boring in the right places.",
+      "description": "One Go API, one database, one React app, one UI layer. The choices are deliberate, and the quality gates run in CI.",
+      "note": "Plus Zod, React Hook Form, React Query, Sonner and Recharts.",
+      "items": {
+        "next": {
+          "name": "Go",
+          "role": "API, auth and static serving"
+        },
+        "react": {
+          "name": "React 19",
+          "role": "Vite SPA"
+        },
+        "typescript": {
+          "name": "TypeScript",
+          "role": "Strict mode"
+        },
+        "prisma": {
+          "name": "PostgreSQL",
+          "role": "The only database"
+        },
+        "postgres": {
+          "name": "SQL migrations",
+          "role": "golang-migrate"
+        },
+        "tailwind": {
+          "name": "Tailwind CSS 4",
+          "role": "Semantic tokens"
+        },
+        "auth": {
+          "name": "Go auth",
+          "role": "Sessions, 2FA, verification"
+        },
+        "docker": {
+          "name": "Docker",
+          "role": "One binary runtime"
+        },
+        "vitest": {
+          "name": "Go test + Vitest",
+          "role": "Unit tests"
+        },
+        "playwright": {
+          "name": "Playwright",
+          "role": "End-to-end tests"
+        }
+      }
+    },
+    "demo": {
+      "title": "Try the actual app.",
+      "description": "The demo is seeded with three roles and enough users to make the dashboard, tables and charts feel real. No setup, no sales call.",
+      "accounts": "Demo accounts",
+      "password": "Password",
+      "signIn": "Sign in to the demo",
+      "create": "Create an account",
+      "command": "Or run it locally",
+      "copy": "Use password \"password\"."
+    },
+    "footer": {
+      "tagline": "A Go + React starter with a point of view.",
+      "product": "Product",
+      "access": "Access",
+      "features": "What's inside",
+      "themes": "Themes",
+      "stack": "Stack",
+      "signIn": "Sign in",
+      "create": "Create account",
+      "license": "MIT licensed.",
+      "built": "Built with Go, React, PostgreSQL and Altics icons."
+    }
+  },
+  "permissions": {
+    "view_admin": "Admin access",
+    "manage_users": "Manage users",
+    "manage_roles": "Manage roles"
+  },
+  "preferences": {
+    "theme": "Theme",
+    "language": "Language",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "updated": "Preferences updated."
+  }
+}

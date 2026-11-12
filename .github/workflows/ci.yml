@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: go_react_boilerplate
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d go_react_boilerplate"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+
+    env:
+      DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/go_react_boilerplate?sslmode=disable
+      AUTH_SECRET: ci-only-change-me-32-characters-minimum
+      APP_URL: http://localhost:3000
+      TRUSTED_ORIGINS: http://localhost:3000
+      LISTEN: 127.0.0.1:3000
+      APP_ENV: test
+      RATE_LIMIT_PER_MINUTE: "100"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+          cache: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install web dependencies
+        run: cd web && npm ci --no-audit --no-fund
+
+      - name: Typecheck
+        run: cd web && npm run typecheck
+
+      - name: i18n parity
+        run: cd web && npm run check:i18n
+
+      - name: Vitest
+        run: cd web && npm test
+
+      - name: Build React app
+        run: cd web && npm run build
+
+      - name: Go vet
+        run: go vet ./cmd/... ./internal/...
+
+      - name: Go test
+        run: go test ./cmd/... ./internal/...
+
+      - name: Seed database
+        run: go run ./cmd/seed
+
+      - name: Build server
+        run: go build -o bin/server ./cmd/server
+
+      - name: Install Playwright
+        run: cd web && npx playwright install --with-deps chromium
+
+      - name: Playwright
+        run: |
+          ./bin/server > /tmp/server.log 2>&1 &
+          server_pid=$!
+          trap 'kill $server_pid' EXIT
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:3000/api/health >/dev/null; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:3000/api/health >/dev/null
+          cd web && npx playwright test

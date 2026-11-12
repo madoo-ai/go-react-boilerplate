@@ -1,0 +1,73 @@
+# Local development stack: Postgres and Mailpit.
+# The app itself is optional; `docker compose up --build` builds the full stack.
+
+services:
+  db:
+    image: postgres:18-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-go_react_boilerplate}
+    ports:
+      - "127.0.0.1:54330:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-go_react_boilerplate}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+
+  mailpit:
+    image: axllent/mailpit:v1.27
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8025:8025"
+      - "127.0.0.1:1025:1025"
+
+  seed:
+    build:
+      context: .
+    entrypoint: ["/app/seed"]
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-go_react_boilerplate}?sslmode=disable
+    depends_on:
+      db:
+        condition: service_healthy
+
+  app:
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      APP_NAME: ${APP_NAME:-Go React Boilerplate}
+      APP_URL: ${COMPOSE_APP_URL:-http://localhost:3000}
+      APP_LOCALE: ${APP_LOCALE:-id}
+      APP_ENV: production
+      LISTEN: 0.0.0.0:3000
+      DATABASE_URL: postgres://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-go_react_boilerplate}?sslmode=disable
+      AUTH_SECRET: ${AUTH_SECRET:-dev-only-change-me-32-characters-minimum}
+      SESSION_TTL_HOURS: "168"
+      TRUSTED_ORIGINS: ${COMPOSE_APP_URL:-http://localhost:3000}
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      SMTP_SECURE: "false"
+      MAIL_FROM: ${MAIL_FROM:-hello@example.com}
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      seed:
+        condition: service_completed_successfully
+      mailpit:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+
+volumes:
+  postgres_data:

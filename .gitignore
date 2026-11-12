@@ -1,0 +1,14 @@
+# Dependencies and build output
+web/node_modules/
+web/dist-ssr/
+web/test-results/
+web/playwright-report/
+bin/
+
+# Local state
+.env
+*.log
+.DS_Store
+
+# Go
+coverage.out
