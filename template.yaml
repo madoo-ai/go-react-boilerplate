@@ -5,7 +5,7 @@ name: go-react-boilerplate
 # from the go-react profile, not the repository's production Dockerfile.
 environment:
   profile: go-react
-  version: "upstream-3f0da731f1"
+  version: "upstream-d85859deec"
 
 workspace: template
 preview:
