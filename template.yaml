@@ -23,5 +23,9 @@ resources:
   memory: 6g
   pids: 1024
 
+qa:
+  test_dir: web/tests/e2e
+  config: web/playwright.config.ts
+
 secrets:
   - OPENCODE_API_KEY
