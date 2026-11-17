@@ -16,7 +16,7 @@ install:
 
 opencode:
   mode: connect
-  model: opencode/deepseek-v4.1-flash
+  model: litellm/hephaestus
 
 resources:
   cpus: "4"
